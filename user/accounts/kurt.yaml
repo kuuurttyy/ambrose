@@ -1,0 +1,11 @@
+email: kurtstubbings@gmail.com
+fullname: 'Kurt Stubbings'
+title: Administrator
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$ezdzadiwYP.TajcN.ItghugYKTSv0TbFAz.gwcocLycBR0y0mypDK
