@@ -1,0 +1,18 @@
+enabled: false
+text_var: 'Custom Text added by the **Git Sync** plugin (disable plugin to remove)'
+folders:
+  - pages
+repository: 'https://github.com/kuuurttyy/ambrose.git'
+user: kuuurttyy
+webhook: /_git-sync
+branch: master
+remote:
+  name: origin
+  branch: master
+git:
+  author: gituser
+  name: GitSync
+  email: git-sync@trilby.media
+  bin: git
+logging: false
+password: gitsync-def5020046734a11a153e967a4db77cb300601495580c555b43a271e57b4c7343508447dc75c81519add0afc71a352aeeb06d0fe2cef30e4e43c7f9118e62ba74f191a78879c12c534cc8f519fea9820acf6dcfb6b54819a2369ea4b
