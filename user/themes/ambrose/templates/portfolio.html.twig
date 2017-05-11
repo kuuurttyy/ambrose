@@ -1,0 +1,18 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    {{ page.content }}
+    
+    {% for project in page.header.project %}
+    
+        {% for key, item in project.thumbnail %}
+            <img src="{{ url(item.path) }}" alt="{{ item.name }}" />
+        {% endfor %}
+    
+    {% endfor %}
+    
+   
+    
+    
+    
+{% endblock %}
