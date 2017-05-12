@@ -12,7 +12,18 @@
 
     <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
-
+    
+    <script>
+      (function(d) {
+        var config = {
+          kitId: 'gzo7mow',
+          scriptTimeout: 3000,
+          async: true
+        },
+        h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+      })(document);
+    </script>
+    
     {% block stylesheets %}
         {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', 99) %}
         {% do assets.addCss('theme://css/custom.css', 98) %}
@@ -29,35 +40,39 @@
 <body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
-    <header class="header">
-        <div class="wrapper">
-            {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
-            {% endblock %}
-        </div>
+    <header class="header large">
+        {% block header_navigation %}
+        <nav class="main-nav">
+            {% include 'partials/navigation.html.twig' %}
+        </nav>
+        {% endblock %}
     </header>
 {% endblock %}
 
 {% block body %}
     <section id="body">
-        <div class="wrapper">
         {% block content %}{% endblock %}
-        </div>
     </section>
 {% endblock %}
 
 {% block footer %}
     <div class="footer">
         <div class="wrapper">
-            <p>Liam Ambrose 2017</p>
+            <p>Liam Ambrose &copy; 2017</p>
         </div>
     </div>
 {% endblock %}
 
+{% block modal_overlay %}
+
+{% endblock %}
+
 {% block bottom %}
     {{ assets.js('bottom') }}
+   <script src="{{ url("theme://js/main.js") }}"></script>
+{% endblock %}
+
+{% block extra_js %}
 {% endblock %}
 
 </body>

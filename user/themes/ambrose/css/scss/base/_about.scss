@@ -1,0 +1,26 @@
+.about {
+    margin-top: $base-spacing;
+    .body {
+        @include grid-column(7);
+        margin-left: -10%;
+        margin-top: 15%;
+        position: relative;
+        p {
+            display: inline;
+            background: $black;
+            padding: 3px;
+            padding-left: 0;
+            padding-right: 0;
+            box-shadow: 10px 0 0 #000, -10px 0 0 #000;
+            line-height: 1.75;
+            &::after {
+                content: "";
+                display: block;
+                height: $base-spacing;
+            }
+        }
+    }
+    .image {
+        @include grid-column(6);
+    }
+}

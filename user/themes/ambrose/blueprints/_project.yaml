@@ -12,38 +12,29 @@ form:
                     title: Portfolio
                     
                     fields:
-                         header.project:
-                            name: Project
-                            type: list
-                            style: vertical
-                            collapsed: true
-                            sort: true
-                            label: Project
-                            fields:
-                                .title:
-                                    type: text
-                                    label: Title
-                                .url:
-                                    type: text
-                                    label: YouTube URL
-                                .short_description:
-                                    type: text
-                                    label: Short Description
-                                .long_description:
-                                    type: markdown
-                                    validate:
-                                        type: textarea
-                                    label: Extra Details
-                                .thumbnail:
-                                    type: file
-                                    label: Thumbnail
-                                    multiple: false
-                                    destination: 'theme@:/assets/portfolio'
-                                    random_name: true
-                                    accept:
-                                        - 'image/*'
-                                    help: Use a 1920 x 1080px .jpg to keep the grid consistent.
-                                    
+
+                        header.title:
+                            type: text
+                            label: Title
+                        header.url:
+                            type: text
+                            label: URL
+                        header.short-description:
+                            type: text
+                            label: Short Description
+                        header.long-description:
+                            type: text
+                            label: Long Description
+                        header.thumbnail:
+                            type: file
+                            label: Thumbnail
+                            multiple: false
+                            destination: self@
+                            random_name: true
+                            accept:
+                                - 'image/*'
+                            help: This is the help
+
                                     
                 advanced:
                     type: tab

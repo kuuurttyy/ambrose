@@ -1,0 +1,16 @@
+enabled: true
+from: cambrosefilms@gmail.com
+from_name: 'Ambrose Films'
+to: kurtstubbings@gmail.com
+to_name: 'Liam Ambrose'
+mailer:
+  engine: mail
+  smtp:
+    server: smtp.gmail.com
+    port: 465
+    encryption: ssl
+    user: cambrosefilms@gmail.com
+  sendmail:
+    bin: /usr/sbin/sendmail
+content_type: text/html
+debug: false

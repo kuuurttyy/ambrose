@@ -1,0 +1,10 @@
+{% extends 'partials/base.html.twig' %}
+
+
+{% block content %}
+<div class="home-video">
+    <div class='embed-container'>
+        <iframe src='{{ page.header.video | regex_replace('~.com\/watch\\?v\\=~', '.com/embed/') }}' frameborder='0' allowfullscreen></iframe>
+    </div>
+</div>
+{% endblock %}

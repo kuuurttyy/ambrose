@@ -1,4 +1,4 @@
-title: Portfolio
+title: Home
 
 form:
     fields:
@@ -9,41 +9,13 @@ form:
             fields:
                 Portfolio:
                     type: tab
-                    title: Portfolio
+                    title: Home
                     
                     fields:
-                         header.project:
-                            name: Project
-                            type: list
-                            style: vertical
-                            collapsed: true
-                            sort: true
-                            label: Project
-                            fields:
-                                .title:
-                                    type: text
-                                    label: Title
-                                .url:
-                                    type: text
-                                    label: YouTube URL
-                                .short_description:
-                                    type: text
-                                    label: Short Description
-                                .long_description:
-                                    type: markdown
-                                    validate:
-                                        type: textarea
-                                    label: Extra Details
-                                .thumbnail:
-                                    type: file
-                                    label: Thumbnail
-                                    multiple: false
-                                    destination: 'theme@:/assets/portfolio'
-                                    random_name: true
-                                    accept:
-                                        - 'image/*'
-                                    help: Use a 1920 x 1080px .jpg to keep the grid consistent.
-                                    
+                        header.video:
+                            type: text
+                            label: Youtube URL
+                            help: Put the Youtube URL for the full screen video
                                     
                 advanced:
                     type: tab

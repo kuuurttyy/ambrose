@@ -1,0 +1,23 @@
+{% extends 'partials/base.html.twig' %}
+
+{% block content %}
+    
+    {% for project in page.collection %}
+        <a href="{{ project.url }}">{{ project.title }}</a>
+    {% endfor %}
+    
+    
+    <div id="modal">
+        <div id="modal-click">
+            <span class="modal-close-button">&times;</span>
+        </div>
+        <div id="modal-content"></div>
+    </div>
+    
+{% endblock %}
+
+
+{% block bottom %}
+       <script src="{{ url("theme://js/jquery.history.js") }}"></script>
+       <script src="{{ url("theme://js/modal.js") }}"></script>
+{% endblock %}

@@ -1,14 +1,140 @@
 header.header {
     width: 100%;
-    background: red;
-    height: 50px;
+    background: $black;
+    position: fixed;
+    z-index: 2000;
+    //    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    &.large {
+        height: $header-large;
+    }
+    &.small {
+        height: $header-small;
+        .main-nav {
+            .Home {
+                width: 150px;
+            }
+        }
+    }
+    .main-nav {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        font-family: $heading-font-family;
+        font-size: 1.2em;
+        height: 100%;
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+            li {
+                display: block;
+                float: left;
+                a {
+                    color: $white;
+                    padding: $base-spacing;
+                    width: 100%;
+                    height: 100%;
+                    transition: color $base-timing;
+                    text-transform: uppercase;
+                    display: block;
+                     :hover {
+                        color: $action-color;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .Home {
+            background-image: url(../assets/logo/logo-white.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 200px;
+            height: 100%;
+            margin: 0 $base-spacing;
+            a {
+                color: transparent;
+            }
+        }
+    }
 }
 
-.main-nav {
-    display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.header,
+.header ul li,
+.main-nav .Home {
+    transition: .7s all;
 }
 
+@media only screen and (max-width: 768px) {
+    header.header {
+        .main-nav {
+            ul {
+                li {
+                    a {
+                        padding: $base-spacing / 2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #body {
+        padding-top: 100px;
+    }
+    header.header {
+        &.large {
+            height: 100px;
+        }
+        &.small {
+            height: 60px;
+            .main-nav {
+                .Home {
+                    width: 120px;
+                }
+            }
+        }
+        .main-nav {
+            ul {
+                li {
+                    a {
+                        font-size: 0.9em;
+                    }
+                }
+            }
+            .Home {
+                width: 150px;
+                margin: 10px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+        #body {
+        padding-top: 60px;
+    }
+    header.header {
+        &.large {
+            height: 60px;
+            .Home {
+                width: 120px;
+            }
+        }
+        &.small {
+            height: 60px;
+            .main-nav {
+                .Home {
+                    width: 120px;
+                }
+            }
+        }
+    }
+}

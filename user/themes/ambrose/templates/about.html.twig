@@ -1,0 +1,25 @@
+{% extends 'partials/base.html.twig' %}
+
+
+{% block content %}
+<div class="wrapper about">
+    <div class="image">
+        {% for key, item in page.header.image %}
+            <img class="parallax-image" src="{{ url(item.path) }}" alt="{{ item.name }}" /> 
+        {% endfor %}
+    </div>
+    <div class="body">
+        {{ page.header.content | markdown }}
+    </div>
+</div>
+
+<div class="wrapper contact-form">
+    {% include "forms/form.html.twig" %}
+</div>
+{% endblock %}
+
+
+{% block extra_js %}
+   <script src="{{ url("theme://js/about.js") }}"></script>
+
+{% endblock %}

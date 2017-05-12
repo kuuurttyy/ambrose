@@ -1,18 +1,49 @@
 {% extends 'partials/base.html.twig' %}
 
 {% block content %}
-    {{ page.content }}
-    
-    {% for project in page.header.project %}
-    
-        {% for key, item in project.thumbnail %}
-            <img src="{{ url(item.path) }}" alt="{{ item.name }}" />
-        {% endfor %}
-    
+       <div class="grid">
+   {# Create counter for data-modal #}
+    {% set i = 1 %}
+    {% for project in page.header.project | reverse %}
+        <figure class="project">
+            {% for key, item in project.thumbnail %}
+                <img src="{{ url(item.path) }}" alt="{{ item.name }}" /> 
+            {% endfor %}
+            <figcaption>
+                <h2>{{ project.title }}</h2>
+                <p>{{ project.short_description }}</p>
+                <a href="javascript:void(0)" class="modal-trigger" data-modal="modal-{{ i }}">View more</a>
+            </figcaption>
+        </figure>
+        
+        <div class="modal" id="modal-{{ i }}">
+			<div class="modal-content">
+			<div class="video">			    
+                    <div class='embed-container'>
+                        <iframe src='{{ project.url | regex_replace('~.com\/watch\\?v\\=~', '.com/embed/') }}' frameborder='0' allowfullscreen></iframe>
+                    </div>
+				</div>
+				<div class="description">
+				    <h2>{{ project.title }}</h2>
+				    <p class="short">{{ project.short_description }}</p>
+				    {{ project.long_description | markdown }}
+                </div>
+			</div>
+                <button class="modal-close">&times;</button>
+		</div>
+    {# Increment counter #}
+    {% set i = i + 1 %}
     {% endfor %}
-    
-   
-    
-    
-    
+</div>
 {% endblock %}
+
+
+{% block modal_overlay %}
+    <div class="modal-overlay"></div><!-- the overlay element -->
+{% endblock %}
+
+
+{% block extra_js %}
+       <script src="{{ url("theme://js/modal.js") }}"></script>
+{% endblock %}
+
