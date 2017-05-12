@@ -9,11 +9,17 @@
         {% endfor %}
     </div>
     <div class="body">
+       <div class="social-links">
+           <a href=""><i class="fa fa-instagram"></i></a>
+           <a href=""><i class="fa fa-youtube"></i></a>
+           <a href="mailto:{{ page.header.email }}"><i class="fa fa-envelope-o"></i></a>
+       </div>
         {{ page.header.content | markdown }}
     </div>
 </div>
 
 <div class="wrapper contact-form">
+   <h2>Get in touch</h2>
     {% include "forms/form.html.twig" %}
 </div>
 {% endblock %}
@@ -21,5 +27,5 @@
 
 {% block extra_js %}
    <script src="{{ url("theme://js/about.js") }}"></script>
-
+<script>
 {% endblock %}

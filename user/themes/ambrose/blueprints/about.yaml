@@ -16,11 +16,24 @@ form:
                             type: markdown
                             validate:
                             type: textarea
+                            
+                        header.instagram:
+                            type: text
+                            label: Instagram URL
+                            
+                        header.youtube:
+                            type: text
+                            label: YouTube URL
+                            
+                        header.email:
+                            type: text
+                            label: Email Address
                                     
                         header.image:
                             type: file
-                            label: Photo
-                            multiple: false
+                            label: Photos
+                            multiple: true
+                            limit: 8
                             destination: 'theme@:/assets/about'
                             random_name: true
                             accept:

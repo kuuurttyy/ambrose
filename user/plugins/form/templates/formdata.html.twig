@@ -5,6 +5,7 @@
 {% endif  %}
 
 {% block content %}
+   <div class="wrapper form-submitted">
     {{ content|raw }}
 
     {% if form %}
@@ -17,5 +18,7 @@
     {% else %}
         <div class="alert notices yellow"><p>{{ 'PLUGIN_FORM.NO_FORM_DATA'|t }}</p></div>
     {% endif %}
-
+    
+        
+</div>
 {% endblock %}

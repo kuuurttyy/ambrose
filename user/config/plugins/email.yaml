@@ -1,15 +1,16 @@
 enabled: true
 from: cambrosefilms@gmail.com
 from_name: 'Ambrose Films'
-to: kurtstubbings@gmail.com
+to: cambrosefilms@gmail.com
 to_name: 'Liam Ambrose'
 mailer:
-  engine: mail
+  engine: smtp
   smtp:
     server: smtp.gmail.com
     port: 465
     encryption: ssl
     user: cambrosefilms@gmail.com
+    password: Moominziggy42069
   sendmail:
     bin: /usr/sbin/sendmail
 content_type: text/html

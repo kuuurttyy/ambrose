@@ -955,5 +955,43 @@ header.header {
     width: calc(50% - 30px);
     float: left;
     margin-left: 20px; }
+  .about .parallax-image {
+    position: relative;
+    margin-bottom: 30%; }
+
+.social-links {
+  text-align: right; }
+  .social-links a {
+    color: #ededed;
+    font-size: 3em;
+    padding: 0 0.5rem;
+    transition: all 0.3s; }
+    .social-links a :hover {
+      color: #9c9c9b; }
+
+.contact-form {
+  background: #070707;
+  position: relative; }
+  .contact-form h2 {
+    font-size: 3em;
+    margin-bottom: 1.5rem; }
+  .contact-form form, .contact-form h2 {
+    width: calc(50% - 30px);
+    float: left;
+    margin-left: 20px;
+    margin-left: calc(25% - 25px + 40px); }
+  .contact-form form .buttons {
+    text-align: center; }
+
+.form-submitted {
+  max-width: 600px; }
+  .form-submitted h2 {
+    font-size: 5em;
+    margin-bottom: 0.25;
+    text-align: center; }
+
+@media only screen and (max-width: 768px) {
+  .social-links a {
+    font-size: 2.5em; } }
 
 /*# sourceMappingURL=custom.css.map */
